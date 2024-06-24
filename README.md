@@ -30,8 +30,6 @@ Antes de começar, certifique-se de ter os seguintes itens instalados:
 ### Clonar o Repositório
 
 ```bash
-git clone https://github.com/wenklesleymendes/TesteUpd8.git
-cd repo
 
 Estrutura do Projeto
 
