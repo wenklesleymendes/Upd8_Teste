@@ -1,0 +1,20 @@
+-- Criação do banco de dados
+CREATE DATABASE SamsungClienteCadastro;
+GO
+
+-- Seleciona o banco de dados recém-criado
+USE SamsungClienteCadastro;
+GO
+
+-- Criação da tabela dbo.Clientes
+CREATE TABLE dbo.Clientes (
+    Id INT NOT NULL PRIMARY KEY,
+    Cpf NVARCHAR(MAX) NOT NULL,
+    Nome NVARCHAR(MAX) NOT NULL,
+    DataNascimento DATETIME2(7) NOT NULL,
+    Sexo NVARCHAR(MAX) NOT NULL,
+    Endereco NVARCHAR(MAX) NOT NULL,
+    Estado NVARCHAR(MAX) NOT NULL,
+    Cidade NVARCHAR(MAX) NOT NULL
+);
+GO

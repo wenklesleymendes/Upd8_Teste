@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Domino.Entities.Cliente>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ações</th>
+            <th>Cliente</th>
+            <th>CPF</th>
+            <th>Data Nasc.</th>
+            <th>Estado</th>
+            <th>Cidade</th>
+            <th>Sexo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td>
+                    <form asp-action="Delete" method="post" style="display:inline">
+                        <input type="hidden" name="id" value="@cliente.Id">
+                        <input type="hidden" name="endereco" value="@cliente.Endereco">
+                        <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
+                    </form>
+                    <button type="button" class="btn btn-success btn-sm editClientBtn" data-id="@cliente.Id" data-nome="@cliente.Nome" data-cpf="@cliente.Cpf" data-datanascimento="@cliente.DataNascimento.ToString("yyyy-MM-dd")" data-endereco="@cliente.Endereco" data-estado="@cliente.Estado" data-cidade="@cliente.Cidade" data-sexo="@cliente.Sexo" onclick="openEditModal(this)">Editar</button>
+                </td>
+                <td>@cliente.Nome</td>
+                <td>@cliente.Cpf</td>
+                <td>@cliente.DataNascimento.ToString("dd/MM/yyyy")</td>
+                <td>@cliente.Estado</td>
+                <td>@cliente.Cidade</td>
+                <td>@cliente.Sexo</td>
+                <td style="display:none;">@cliente.Endereco</td>
+            </tr>
+        }
+    </tbody>
+</table>
